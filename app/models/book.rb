@@ -1,4 +1,2 @@
-class BooK < ApplicationRecord
-    belongs_to :user
-    
+class Book < ApplicationRecord
 end
