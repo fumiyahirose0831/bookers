@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 
-<%= render ‘books/list’, locals: { user: @user } %>
+
 
 <div class="col-md-8 offset-md-1">
- <h2>Book detail</h2>
+ <h2>Users</h2>
   <table class="table table-hover table-inverse">
    <thead>
-    <tr></tr>
+    <tr>
+     <th>image</th>
+     <th>name</th>
+    </tr>
    </thead>
 
    <tbody>
+  　<% @users.each do |user| %>
     <tr>
      <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
-     <br><%= @user.name %></br>
-     <td><%= @book.title %></td>
-     <td><%= @book.body %></td>
+     <td><%= user.name %></td>
     </tr>
+    <% end %>
    </tbody>
   </table>
 </div>
 
 </main>
+
+
+
+
+
+
