@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-
-<%= render ‘books/list’, locals: { user: @user } %>
+<%= render 'books/list', user: @user %>
 
 <div class="col-md-8 offset-md-1">
  <h2>Book detail</h2>
@@ -10,11 +8,19 @@
    </thead>
 
    <tbody>
+
     <tr>
-     <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
-     <br><%= @user.name %></br>
+     <td>
+      <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+      <p><%= @book.user.name %></p>
+     </td>
      <td><%= @book.title %></td>
      <td><%= @book.body %></td>
+     <% if @book.user.id == current_user.id %>
+     <td><%= link_to "edit",edit_book_path(@book)  %> </td>
+     <td><%= link_to "destroy",book_path(@book),method: :delete %> </td>
+     <% end %>
+
     </tr>
    </tbody>
   </table>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<%= render 'books/list', user: @user %>
 
 
 <div class="col-md-8 offset-md-1">
@@ -17,6 +17,7 @@
     <tr>
      <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
      <td><%= user.name %></td>
+     <td><%= link_to "show","/users/#{user.id}" %> </td>
     </tr>
     <% end %>
    </tbody>
