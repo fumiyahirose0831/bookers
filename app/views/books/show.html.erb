@@ -1,3 +1,6 @@
+<%= flash[:notice] %>
+
+
 <%= render 'books/list', user: @user %>
 
 <div class="col-md-8 offset-md-1">
@@ -14,12 +17,14 @@
       <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
       <p><%= @book.user.name %></p>
      </td>
-     <td><%= @book.title %></td>
+
+     <td><%= link_to 'title', book_path(@book) %></td>
      <td><%= @book.body %></td>
      <% if @book.user.id == current_user.id %>
      <td><%= link_to "edit",edit_book_path(@book)  %> </td>
      <td><%= link_to "destroy",book_path(@book),method: :delete %> </td>
      <% end %>
+ <td></td>
 
     </tr>
    </tbody>
