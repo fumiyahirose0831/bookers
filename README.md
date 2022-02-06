@@ -1,8 +1,5 @@
-notice: 'Welcome! You have signed up successfully.
-
-
-
-
-
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mg9r9fBAVaWGsSdfWgWTlR9s5FpVKwlrQ5+g3Jf0cS+WS55/+wJPC8BmpYqBLvcln7noO1BjqefRVkzGISf7Rg==", "title"=>"fff", "body"=>"fff", "commit"=>"Create Book"}
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BBYocPAHzj0HLnkPX6NyvY0nOtPFLu8OlifZtOztknSgUt36+0XUk0H5+9qEiBYNDfI2ssBmT4IE7jWuWj4YHQ==", "book"=>{"title"=>"fff", "body"=>"fff"}, "commit"=>"Create Book"}
+  29) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする 更新されない
+      Failure/Error: click_button 'Update User'
+      
+      Capybara::ElementNotFound:
+        Unable to find button "Update User" that is not disabled
